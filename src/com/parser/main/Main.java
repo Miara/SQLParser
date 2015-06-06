@@ -16,10 +16,12 @@ public class Main {
 	public static void main(String[] args) throws JSQLParserException {
 			CCJSqlParserManager pm = new CCJSqlParserManager();
 			
-			//TODO : Wczytaæ dane z plikow konfiguracyjnych do klas z paczki persistence 
+			XmlParser parser = new XmlParser();
+			parser.parseToObjects("./resources/tabele.xml");
 			
-			//TODO : SQL Reader - klasa do czytania zapytania SQL z pliku wejœciowego
-			String sql = "SELECT tytus FROM bajki WHERE work BETWEEN 100 and 200"
+			
+			
+/*			String sql = "SELECT tytus FROM bajki WHERE work BETWEEN 100 and 200"
 					+ " AND gora = (SELECT count(*) FROM ballady);" ;
 			
 			net.sf.jsqlparser.statement.Statement statement = pm.parse(new StringReader(sql));
@@ -41,7 +43,7 @@ public class Main {
 			{
 				UpdateService updateService = new UpdateService();
 				// TODO : obs³uga Update'a
-			}
+			}*/
 	}
 	
 	
